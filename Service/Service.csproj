@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C73DD4B2-38FD-4FB1-82AC-2744A491ACD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Service</RootNamespace>
+    <AssemblyName>Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Finance\CashBankService.cs" />
+    <Compile Include="Service\Finance\CashMutationService.cs" />
+    <Compile Include="Service\Finance\CashBankAdjustmentService.cs" />
+    <Compile Include="Service\Finance\CashBankMutationService.cs" />
+    <Compile Include="Service\Manufacturing\BarringOrderDetailService.cs" />
+    <Compile Include="Service\Manufacturing\BarringOrderService.cs" />
+    <Compile Include="Service\PurchaseOperation\PayableService.cs" />
+    <Compile Include="Service\PurchaseOperation\PaymentVoucherDetailService.cs" />
+    <Compile Include="Service\PurchaseOperation\PaymentVoucherService.cs" />
+    <Compile Include="Service\PurchaseOperation\PurchaseInvoiceDetailService.cs" />
+    <Compile Include="Service\PurchaseOperation\PurchaseInvoiceService.cs" />
+    <Compile Include="Service\SalesOperation\ReceivableService.cs" />
+    <Compile Include="Service\SalesOperation\ReceiptVoucherDetailService.cs" />
+    <Compile Include="Service\SalesOperation\ReceiptVoucherService.cs" />
+    <Compile Include="Service\SalesOperation\SalesInvoiceDetailService.cs" />
+    <Compile Include="Service\SalesOperation\SalesInvoiceService.cs" />
+    <Compile Include="Service\StockAndMaster\BarringService.cs" />
+    <Compile Include="Service\SalesOperation\DeliveryOrderDetailService.cs" />
+    <Compile Include="Service\SalesOperation\DeliveryOrderService.cs" />
+    <Compile Include="Service\PurchaseOperation\PurchaseOrderDetailService.cs" />
+    <Compile Include="Service\PurchaseOperation\PurchaseOrderService.cs" />
+    <Compile Include="Service\PurchaseOperation\PurchaseReceivalDetailService.cs" />
+    <Compile Include="Service\PurchaseOperation\PurchaseReceivalService.cs" />
+    <Compile Include="Service\Manufacturing\RollerWarehouseMutationDetailService.cs" />
+    <Compile Include="Service\Manufacturing\RollerWarehouseMutationService.cs" />
+    <Compile Include="Service\SalesOperation\SalesOrderDetailService.cs" />
+    <Compile Include="Service\SalesOperation\SalesOrderService.cs" />
+    <Compile Include="Service\StockAndMaster\UoMService.cs" />
+    <Compile Include="Service\StockAndMaster\WarehouseMutationOrderService.cs" />
+    <Compile Include="Service\StockAndMaster\WarehouseMutationOrderDetailService.cs" />
+    <Compile Include="Service\StockAndMaster\StockAdjustmentDetailService.cs" />
+    <Compile Include="Service\StockAndMaster\StockAdjustmentService.cs" />
+    <Compile Include="Service\StockAndMaster\StockMutationService.cs" />
+    <Compile Include="Service\StockAndMaster\WarehouseItemService.cs" />
+    <Compile Include="Service\StockAndMaster\WarehouseService.cs" />
+    <Compile Include="Service\Manufacturing\RecoveryOrderService.cs" />
+    <Compile Include="Service\Manufacturing\RecoveryOrderDetailService.cs" />
+    <Compile Include="Service\Manufacturing\RecoveryAccessoryDetailService.cs" />
+    <Compile Include="Service\Manufacturing\CoreIdentificationService.cs" />
+    <Compile Include="Service\Manufacturing\CoreIdentificationDetailService.cs" />
+    <Compile Include="Service\StockAndMaster\RollerBuilderService.cs" />
+    <Compile Include="Service\StockAndMaster\CoreBuilderService.cs" />
+    <Compile Include="Service\StockAndMaster\RollerTypeService.cs" />
+    <Compile Include="Service\StockAndMaster\MachineService.cs" />
+    <Compile Include="Service\StockAndMaster\ContactService.cs" />
+    <Compile Include="Service\StockAndMaster\ItemService.cs" />
+    <Compile Include="Service\StockAndMaster\ItemTypeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{8e08d94c-1e43-4a28-9b69-ca7172cf5b76}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{518749be-3ea1-4db9-a03f-4b2d2923e659}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

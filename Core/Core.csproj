@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8E08D94C-1E43-4A28-9B69-CA7172CF5B76}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\OperationConstant.cs" />
+    <Compile Include="Constants\ManufacturingConstant.cs" />
+    <Compile Include="DomainModel\Finance\CashBank.cs" />
+    <Compile Include="DomainModel\Finance\CashBankAdjustment.cs" />
+    <Compile Include="DomainModel\Finance\CashMutation.cs" />
+    <Compile Include="DomainModel\Finance\CashBankMutation.cs" />
+    <Compile Include="DomainModel\PurchaseOperation\Payable.cs" />
+    <Compile Include="DomainModel\PurchaseOperation\PaymentVoucher.cs" />
+    <Compile Include="DomainModel\PurchaseOperation\PaymentVoucherDetail.cs" />
+    <Compile Include="DomainModel\PurchaseOperation\PurchaseInvoice.cs" />
+    <Compile Include="DomainModel\PurchaseOperation\PurchaseInvoiceDetail.cs" />
+    <Compile Include="DomainModel\SalesOperation\Receivable.cs" />
+    <Compile Include="DomainModel\SalesOperation\ReceiptVoucher.cs" />
+    <Compile Include="DomainModel\SalesOperation\ReceiptVoucherDetail.cs" />
+    <Compile Include="DomainModel\SalesOperation\SalesInvoice.cs" />
+    <Compile Include="DomainModel\SalesOperation\SalesInvoiceDetail.cs" />
+    <Compile Include="DomainModel\StockAndMaster\Barring.cs" />
+    <Compile Include="DomainModel\Manufacturing\BarringOrder.cs" />
+    <Compile Include="DomainModel\Manufacturing\BarringOrderDetail.cs" />
+    <Compile Include="DomainModel\SalesOperation\DeliveryOrder.cs" />
+    <Compile Include="DomainModel\SalesOperation\DeliveryOrderDetail.cs" />
+    <Compile Include="DomainModel\PurchaseOperation\PurchaseOrder.cs" />
+    <Compile Include="DomainModel\PurchaseOperation\PurchaseOrderDetail.cs" />
+    <Compile Include="DomainModel\PurchaseOperation\PurchaseReceival.cs" />
+    <Compile Include="DomainModel\PurchaseOperation\PurchaseReceivalDetail.cs" />
+    <Compile Include="DomainModel\Manufacturing\RollerWarehouseMutation.cs" />
+    <Compile Include="DomainModel\Manufacturing\RollerWarehouseMutationDetail.cs" />
+    <Compile Include="DomainModel\SalesOperation\SalesOrder.cs" />
+    <Compile Include="DomainModel\SalesOperation\SalesOrderDetail.cs" />
+    <Compile Include="DomainModel\StockAndMaster\UoM.cs" />
+    <Compile Include="DomainModel\StockAndMaster\Item.cs" />
+    <Compile Include="DomainModel\StockAndMaster\StockAdjustment.cs" />
+    <Compile Include="DomainModel\StockAndMaster\StockAdjustmentDetail.cs" />
+    <Compile Include="DomainModel\StockAndMaster\StockMutation.cs" />
+    <Compile Include="DomainModel\StockAndMaster\WarehouseMutationOrderDetail.cs" />
+    <Compile Include="DomainModel\StockAndMaster\WarehouseItem.cs" />
+    <Compile Include="DomainModel\Manufacturing\CoreIdentification.cs" />
+    <Compile Include="DomainModel\Manufacturing\CoreIdentificationDetail.cs" />
+    <Compile Include="DomainModel\Manufacturing\RecoveryOrder.cs" />
+    <Compile Include="DomainModel\Manufacturing\RecoveryOrderDetail.cs" />
+    <Compile Include="DomainModel\StockAndMaster\WarehouseMutationOrder.cs" />
+    <Compile Include="DomainModel\StockAndMaster\RollerType.cs" />
+    <Compile Include="DomainModel\StockAndMaster\CoreBuilder.cs" />
+    <Compile Include="DomainModel\StockAndMaster\RollerBuilder.cs" />
+    <Compile Include="DomainModel\StockAndMaster\Machine.cs" />
+    <Compile Include="DomainModel\StockAndMaster\Contact.cs" />
+    <Compile Include="DomainModel\Manufacturing\RecoveryAccessoryDetail.cs" />
+    <Compile Include="DomainModel\StockAndMaster\ItemType.cs" />
+    <Compile Include="DomainModel\StockAndMaster\Warehouse.cs" />
+    <Compile Include="Interface\Repository\Finance\ICashMutationRepository.cs" />
+    <Compile Include="Interface\Repository\Finance\ICashBankRepository.cs" />
+    <Compile Include="Interface\Repository\Finance\ICashBankMutationRepository.cs" />
+    <Compile Include="Interface\Repository\PurchaseOperation\IPayableRepository.cs" />
+    <Compile Include="Interface\Repository\PurchaseOperation\IPaymentVoucherDetailRepository.cs" />
+    <Compile Include="Interface\Repository\PurchaseOperation\IPaymentVoucherRepository.cs" />
+    <Compile Include="Interface\Repository\PurchaseOperation\IPurchaseInvoiceDetailRepository.cs" />
+    <Compile Include="Interface\Repository\PurchaseOperation\IPurchaseInvoiceRepository.cs" />
+    <Compile Include="Interface\Repository\SalesOperation\IDeliveryOrderDetailRepository.cs" />
+    <Compile Include="Interface\Repository\SalesOperation\IDeliveryOrderRepository.cs" />
+    <Compile Include="Interface\Repository\PurchaseOperation\IPurchaseOrderDetailRepository.cs" />
+    <Compile Include="Interface\Repository\PurchaseOperation\IPurchaseOrderRepository.cs" />
+    <Compile Include="Interface\Repository\PurchaseOperation\IPurchaseReceivalDetailRepository.cs" />
+    <Compile Include="Interface\Repository\PurchaseOperation\IPurchaseReceivalRepository.cs" />
+    <Compile Include="Interface\Repository\Manufacturing\IRollerWarehouseMutationDetailRepository.cs" />
+    <Compile Include="Interface\Repository\Manufacturing\IRollerWarehouseMutationRepository.cs" />
+    <Compile Include="Interface\Repository\SalesOperation\IReceivableRepository.cs" />
+    <Compile Include="Interface\Repository\SalesOperation\IReceiptVoucherDetailRepository.cs" />
+    <Compile Include="Interface\Repository\SalesOperation\IReceiptVoucherRepository.cs" />
+    <Compile Include="Interface\Repository\SalesOperation\ISalesInvoiceDetailRepository.cs" />
+    <Compile Include="Interface\Repository\SalesOperation\ISalesInvoiceRepository.cs" />
+    <Compile Include="Interface\Repository\SalesOperation\ISalesOrderDetailRepository.cs" />
+    <Compile Include="Interface\Repository\SalesOperation\ISalesOrderRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IStockAdjustmentRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IUoMRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IStockAdjustmentDetailRepository.cs" />
+    <Compile Include="Interface\Repository\Finance\ICashBankAdjustmentRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IStockMutationRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IWarehouseMutationOrderDetailRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IWarehouseMutationOrderRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IWarehouseItemRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IWarehouseRepository.cs" />
+    <Compile Include="Interface\Repository\Manufacturing\IBarringOrderDetailRepository.cs" />
+    <Compile Include="Interface\Repository\Manufacturing\IBarringOrderRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IBarringRepository.cs" />
+    <Compile Include="Interface\Repository\Manufacturing\IRecoveryOrderDetailRepository.cs" />
+    <Compile Include="Interface\Repository\Manufacturing\IRecoveryOrderRepository.cs" />
+    <Compile Include="Interface\Repository\Manufacturing\ICoreIdentificationRepository.cs" />
+    <Compile Include="Interface\Repository\Manufacturing\ICoreIdentificationDetailRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\ICoreBuilderRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IMachineRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IRollerTypeRepository.cs" />
+    <Compile Include="Interface\Repository\Manufacturing\IRecoveryAccessoryDetailRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IRollerBuilderRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IContactRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IItemRepository.cs" />
+    <Compile Include="Interface\Repository\StockAndMaster\IItemTypeRepository.cs" />
+    <Compile Include="Interface\Repository\IRepository.cs" />
+    <Compile Include="Interface\Service\Finance\ICashMutationService.cs" />
+    <Compile Include="Interface\Service\Finance\ICashBankService.cs" />
+    <Compile Include="Interface\Service\Finance\ICashBankAdjustmentService.cs" />
+    <Compile Include="Interface\Service\Finance\ICashBankMutationService.cs" />
+    <Compile Include="Interface\Service\PurchaseOperation\IPayableService.cs" />
+    <Compile Include="Interface\Service\PurchaseOperation\IPaymentVoucherDetailService.cs" />
+    <Compile Include="Interface\Service\PurchaseOperation\IPaymentVoucherService.cs" />
+    <Compile Include="Interface\Service\PurchaseOperation\IPurchaseInvoiceDetailService.cs" />
+    <Compile Include="Interface\Service\PurchaseOperation\IPurchaseInvoiceService.cs" />
+    <Compile Include="Interface\Service\SalesOperation\IDeliveryOrderDetailService.cs" />
+    <Compile Include="Interface\Service\SalesOperation\IDeliveryOrderService.cs" />
+    <Compile Include="Interface\Service\PurchaseOperation\IPurchaseOrderDetailService.cs" />
+    <Compile Include="Interface\Service\PurchaseOperation\IPurchaseOrderService.cs" />
+    <Compile Include="Interface\Service\PurchaseOperation\IPurchaseReceivalDetailService.cs" />
+    <Compile Include="Interface\Service\PurchaseOperation\IPurchaseReceivalService.cs" />
+    <Compile Include="Interface\Service\Manufacturing\IRollerWarehouseMutationDetailService.cs" />
+    <Compile Include="Interface\Service\Manufacturing\IRollerWarehouseMutationService.cs" />
+    <Compile Include="Interface\Service\SalesOperation\IReceivableService.cs" />
+    <Compile Include="Interface\Service\SalesOperation\IReceiptVoucherDetailService.cs" />
+    <Compile Include="Interface\Service\SalesOperation\IReceiptVoucherService.cs" />
+    <Compile Include="Interface\Service\SalesOperation\ISalesInvoiceDetailService.cs" />
+    <Compile Include="Interface\Service\SalesOperation\ISalesInvoiceService.cs" />
+    <Compile Include="Interface\Service\SalesOperation\ISalesOrderDetailService.cs" />
+    <Compile Include="Interface\Service\SalesOperation\ISalesOrderService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IUoMService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IStockAdjustmentDetailService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IStockAdjustmentService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IStockMutationService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IWarehouseMutationOrderDetailService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IWarehouseMutationOrderService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IWarehouseItemService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IWarehouseService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IBarringService.cs" />
+    <Compile Include="Interface\Service\Manufacturing\IBarringOrderDetailService.cs" />
+    <Compile Include="Interface\Service\Manufacturing\IBarringOrderService.cs" />
+    <Compile Include="Interface\Service\Manufacturing\IRecoveryOrderService.cs" />
+    <Compile Include="Interface\Service\Manufacturing\IRecoveryOrderDetailService.cs" />
+    <Compile Include="Interface\Service\Manufacturing\IRecoveryAccessoryDetailService.cs" />
+    <Compile Include="Interface\Service\Manufacturing\ICoreIdentificationDetailService.cs" />
+    <Compile Include="Interface\Service\Manufacturing\ICoreIdentificationService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IRollerTypeService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IRollerBuilderService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IMachineService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\ICoreBuilderService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IContactService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IItemService.cs" />
+    <Compile Include="Interface\Service\StockAndMaster\IItemTypeService.cs" />
+    <Compile Include="Interface\Validation\Finance\ICashBankValidator.cs" />
+    <Compile Include="Interface\Validation\Finance\ICashMutationValidator.cs" />
+    <Compile Include="Interface\Validation\Finance\ICashBankAdjustmentValidator.cs" />
+    <Compile Include="Interface\Validation\Finance\ICashBankMutationValidator.cs" />
+    <Compile Include="Interface\Validation\PurchaseOperation\IPayableValidator.cs" />
+    <Compile Include="Interface\Validation\PurchaseOperation\IPaymentVoucherDetailValidator.cs" />
+    <Compile Include="Interface\Validation\PurchaseOperation\IPaymentVoucherValidator.cs" />
+    <Compile Include="Interface\Validation\PurchaseOperation\IPurchaseInvoiceDetailValidator.cs" />
+    <Compile Include="Interface\Validation\PurchaseOperation\IPurchaseInvoiceValidator.cs" />
+    <Compile Include="Interface\Validation\SalesOperation\IDeliveryOrderDetailValidator.cs" />
+    <Compile Include="Interface\Validation\SalesOperation\IDeliveryOrderValidator.cs" />
+    <Compile Include="Interface\Validation\PurchaseOperation\IPurchaseOrderDetailValidator.cs" />
+    <Compile Include="Interface\Validation\PurchaseOperation\IPurchaseOrderValidator.cs" />
+    <Compile Include="Interface\Validation\PurchaseOperation\IPurchaseReceivalDetailValidator.cs" />
+    <Compile Include="Interface\Validation\PurchaseOperation\IPurchaseReceivalValidator.cs" />
+    <Compile Include="Interface\Validation\Manufacturing\IRollerWarehouseMutationDetailValidator.cs" />
+    <Compile Include="Interface\Validation\Manufacturing\IRollerWarehouseMutationValidator.cs" />
+    <Compile Include="Interface\Validation\SalesOperation\IReceivableValidator.cs" />
+    <Compile Include="Interface\Validation\SalesOperation\IReceiptVoucherDetailValidator.cs" />
+    <Compile Include="Interface\Validation\SalesOperation\IReceiptVoucherValidator.cs" />
+    <Compile Include="Interface\Validation\SalesOperation\ISalesInvoiceDetailValidator.cs" />
+    <Compile Include="Interface\Validation\SalesOperation\ISalesInvoiceValidator.cs" />
+    <Compile Include="Interface\Validation\SalesOperation\ISalesOrderDetailValidator.cs" />
+    <Compile Include="Interface\Validation\SalesOperation\ISalesOrderValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IUoMValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IStockAdjustmentDetailValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IStockAdjustmentValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IStockMutationValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IWarehouseMutationOrderDetailValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IWarehouseMutationOrderValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IWarehouseItemValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IWarehouseValidator.cs" />
+    <Compile Include="Interface\Validation\Manufacturing\IBarringOrderDetailValidator.cs" />
+    <Compile Include="Interface\Validation\Manufacturing\IBarringOrderValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IBarringValidator.cs" />
+    <Compile Include="Interface\Validation\Manufacturing\IRecoveryAccessoryDetailValidator.cs" />
+    <Compile Include="Interface\Validation\Manufacturing\IRecoveryOrderDetailValidator.cs" />
+    <Compile Include="Interface\Validation\Manufacturing\IRecoveryOrderValidator.cs" />
+    <Compile Include="Interface\Validation\Manufacturing\ICoreIdentificationDetailValidator.cs" />
+    <Compile Include="Interface\Validation\Manufacturing\ICoreIdentificationValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IRollerBuilderValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\ICoreBuilderValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IMachineValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IRollerTypeValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IContactValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IItemTypeValidator.cs" />
+    <Compile Include="Interface\Validation\StockAndMaster\IItemValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

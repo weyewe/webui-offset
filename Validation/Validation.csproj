@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FCE3A19-3B1D-4BD3-9752-274D5EFE7F2F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Validation</RootNamespace>
+    <AssemblyName>Validation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\Finance\CashBankValidator.cs" />
+    <Compile Include="Validation\Finance\CashMutationValidator.cs" />
+    <Compile Include="Validation\Finance\CashBankAdjustmentValidator.cs" />
+    <Compile Include="Validation\Finance\CashBankMutationValidator.cs" />
+    <Compile Include="Validation\Manufacturing\BarringOrderDetailValidator.cs" />
+    <Compile Include="Validation\Manufacturing\BarringOrderValidator.cs" />
+    <Compile Include="Validation\PurchaseOperation\PayableValidator.cs" />
+    <Compile Include="Validation\PurchaseOperation\PaymentVoucherDetailValidator.cs" />
+    <Compile Include="Validation\PurchaseOperation\PaymentVoucherValidator.cs" />
+    <Compile Include="Validation\PurchaseOperation\PurchaseInvoiceDetailValidator.cs" />
+    <Compile Include="Validation\PurchaseOperation\PurchaseInvoiceValidator.cs" />
+    <Compile Include="Validation\SalesOperation\ReceivableValidator.cs" />
+    <Compile Include="Validation\SalesOperation\ReceiptVoucherDetailValidator.cs" />
+    <Compile Include="Validation\SalesOperation\ReceiptVoucherValidator.cs" />
+    <Compile Include="Validation\SalesOperation\SalesInvoiceDetailValidator.cs" />
+    <Compile Include="Validation\SalesOperation\SalesInvoiceValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\BarringValidator.cs" />
+    <Compile Include="Validation\SalesOperation\DeliveryOrderDetailValidator.cs" />
+    <Compile Include="Validation\SalesOperation\DeliveryOrderValidator.cs" />
+    <Compile Include="Validation\PurchaseOperation\PurchaseOrderDetailValidator.cs" />
+    <Compile Include="Validation\PurchaseOperation\PurchaseOrderValidator.cs" />
+    <Compile Include="Validation\PurchaseOperation\PurchaseReceivalDetailValidator.cs" />
+    <Compile Include="Validation\PurchaseOperation\PurchaseReceivalValidator.cs" />
+    <Compile Include="Validation\Manufacturing\RollerWarehouseMutationDetailValidator.cs" />
+    <Compile Include="Validation\Manufacturing\RollerWarehouseMutationValidator.cs" />
+    <Compile Include="Validation\SalesOperation\SalesOrderDetailValidator.cs" />
+    <Compile Include="Validation\SalesOperation\SalesOrderValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\UoMValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\WarehouseMutationOrderValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\WarehouseMutationOrderDetailValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\StockAdjustmentDetailValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\StockAdjustmentValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\StockMutationValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\WarehouseItemValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\WarehouseValidator.cs" />
+    <Compile Include="Validation\Manufacturing\RecoveryAccessoryDetailValidator.cs" />
+    <Compile Include="Validation\Manufacturing\RecoveryOrderDetailValidator.cs" />
+    <Compile Include="Validation\Manufacturing\RecoveryOrderValidator.cs" />
+    <Compile Include="Validation\Manufacturing\CoreIdentificationValidator.cs" />
+    <Compile Include="Validation\Manufacturing\CoreIdentificationDetailValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\MachineValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\RollerTypeValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\CoreBuilderValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\RollerBuilderValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\ContactValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\ItemTypeValidator.cs" />
+    <Compile Include="Validation\StockAndMaster\ItemValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{8e08d94c-1e43-4a28-9b69-ca7172cf5b76}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{518749be-3ea1-4db9-a03f-4b2d2923e659}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{c73dd4b2-38fd-4fb1-82ac-2744a491acd5}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
